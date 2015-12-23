@@ -3,7 +3,7 @@
 
 
 **revdiff** was created to build diff documents with which authors
-can ease the work of reviewers by marking changes in the text, adding
+can **ease the work of reviewers** by marking changes in the text, adding
 tags and adding comments.
 
 
