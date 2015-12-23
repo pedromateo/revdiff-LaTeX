@@ -1,6 +1,4 @@
-# revdiff: A LaTeX revision and diff package
-
-
+# **revdiff**: a LaTeX revision and diff package
 
 **revdiff** was created to build diff documents with which authors
 can **ease the work of reviewers** by marking changes in the text, adding
