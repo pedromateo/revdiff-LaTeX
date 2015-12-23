@@ -16,6 +16,8 @@ tags and adding comments.
 * `\rcomment{This is a comment}` to add comments.
 * `\rtag{a tag}` to add tags to the text.
 
+Check the result of using these commands [here >>](https://github.com/pedromateo/latex_revdiff/blob/master/test.pdf)
+
 ## Wanna help?
 
 TODO list:
