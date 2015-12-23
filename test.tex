@@ -1,0 +1,61 @@
+\documentclass[11pt,onecolumn]{article}
+\usepackage[T1]{fontenc}
+
+
+%%%
+%%% package for revision mode
+\usepackage[revision]{revdiff}
+%\usepackage[clean]{revdiff}
+
+%%%
+%%% document starts here
+\begin{document} 
+
+\date{\vspace{-5ex}}
+\title{{\huge{\bf revdiff}}\\ A \LaTeX ~revision and diff package}
+\maketitle
+
+
+\begin{abstract}
+{\bf revdiff} was created to build diff documents with which authors
+can ease the work of reviewers by marking changes in the text, adding
+tags and adding comments.
+\end{abstract}
+
+%%%
+\section{Printing built-in legend} 
+
+\rlegend
+
+(This text was printed using {\tt \textbackslash rlegend} command.)
+
+%%%
+\section{Usage example} 
+
+Lorem ipsum dolor sit amet, \rnew{this is new text} consectetur
+adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+magna aliqua. Ut enim ad minim veniam \rold{this is old text}, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat.
+
+\rcomment{This is a comment}\\ Duis aute irure dolor in reprehenderit
+in voluptate velit esse cillum dolore eu fugiat nulla
+pariatur. \rchange{This is an}{inline change} Excepteur sint occaecat
+cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
+id est laborum. \rtag{a tag}
+
+%%%
+\section{TODO list}
+
+\begin{itemize} 
+\item tag index including links to tags. Index is created by using
+  {\tt \textbackslash rtagindex} command.
+\end{itemize} 
+
+
+
+
+
+
+
+\end{document}
