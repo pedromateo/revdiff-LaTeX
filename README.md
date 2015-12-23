@@ -21,7 +21,7 @@ Check the result of using these commands [here >>](https://github.com/pedromateo
 TODO list:
 
 * tag index including links to tags. Index is created by using
-  {{{\rtagindex}}} command. 
+  `\rtagindex` command. 
 
 
 
