@@ -21,8 +21,10 @@
 \newcommand{\rchange}[2]{#2}
 \newcommand{\rtag}[1]{#1}
 \newcommand{\rcomment}[1]{#1}
+\newcommand{\renclose}[2]{#2}
 \newcommand{\rtchange}[3]{#3}
 \newcommand{\rtcomment}[2]{#2}
+\newcommand{\rtenclose}[3]{#3}
 \newcommand{\rlegend}{}
 
 % Cites have to be inserted into mbox to allow strikethrough
@@ -43,8 +45,11 @@
   
   \renewcommand{\rcomment}[1]{\noindent \textcolor{commentcolor}{\sf //#1//}}
   
+  \renewcommand{\renclose}[2]{~~\textcolor{commentcolor}{#1 $>>>>$} #2 \textcolor{commentcolor}{$<<<<$}~~}
+  
   \renewcommand{\rtchange}[3]{\rtag{#1}~\rchange{#2}{#3}}
   \renewcommand{\rtcomment}[2]{\rtag{#1}~\rcomment{#2}}
+  \renewcommand{\rtenclose}[3]{\rtag{#1}~\renclose{#2}{#3}}
   
   % cite needs to be redefined to avoid compilation errors
   \renewcommand{\cite}[1]{\mbox{\origcite{#1}}}
@@ -59,6 +64,7 @@
      \rold{Removed text is turn into red.}
      Changes can also be inline: \rchange{This is an}{ inline change.}
      You can also find \rtag{tags} and \rcomment{other comments} in the text.
+     Comments can be \renclose{linked to}{a specific part of the text.}
      Changes can be also \rtchange{tagged}{to mark}{something}. 
      Comments can be \rtcomment{tagged}{as well}.
   }
@@ -76,9 +82,11 @@
   \renewcommand{\rchange}[2]{#2}
   \renewcommand{\rtag}[1]{}
   \renewcommand{\rcomment}[1]{}
+  \renewcommand{\renclose}[2]{#2}
   
   \renewcommand{\rtchange}[3]{#3}
   \renewcommand{\rtcomment}[2]{}
+  \renewcommand{\rtenclose}[3]{#3}
   
   % cite needs to be redefined to avoid compilation errors
   \renewcommand{\cite}[1]{\origcite{#1}}

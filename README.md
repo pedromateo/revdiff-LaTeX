@@ -12,6 +12,7 @@ tags and adding comments.
 * `\rold{this is old text}` for text deletions.
 * `\rchange{This is an}{inline change}` is similar to `\rnew` and `\rold`, but in one command.
 * `\rcomment{This is a comment}` to add comments.
+* `\renclose{This is a comment}{here the text}` to add comments to a specific part of the text.
 * `\rtag{a tag}` to add tags to the text.
 * `\rtchange{tag}{This is an}{inline change}` is similar to `\rchange` but including a tag.
 * `\rtcomment{tag}{This is a comment}` is similar to `\rcomment` but including a tag.
