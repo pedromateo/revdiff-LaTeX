@@ -13,6 +13,8 @@ tags and adding comments.
 * `\rchange{This is an}{inline change}` is similar to `\rnew` and `\rold`, but in one command.
 * `\rcomment{This is a comment}` to add comments.
 * `\rtag{a tag}` to add tags to the text.
+* `\rtchange{tag}{This is an}{inline change}` is similar to `\rchange` but including a tag.
+* `\rtcomment{tag}{This is a comment}` is similar to `\rcomment` but including a tag.
 
 Check the result of using these commands [here >>](https://github.com/pedromateo/latex_revdiff/blob/master/test.pdf)
 
