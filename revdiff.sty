@@ -21,6 +21,8 @@
 \newcommand{\rchange}[2]{#2}
 \newcommand{\rtag}[1]{#1}
 \newcommand{\rcomment}[1]{#1}
+\newcommand{\rtchange}[3]{#3}
+\newcommand{\rtcomment}[2]{#2}
 \newcommand{\rlegend}{}
 
 % Cites have to be inserted into mbox to allow strikethrough
@@ -41,6 +43,9 @@
   
   \renewcommand{\rcomment}[1]{\noindent \textcolor{commentcolor}{\sf //#1//}}
   
+  \renewcommand{\rtchange}[3]{\rtag{#1}~\rchange{#2}{#3}}
+  \renewcommand{\rtcomment}[2]{\rtag{#1}~\rcomment{#2}}
+  
   % cite needs to be redefined to avoid compilation errors
   \renewcommand{\cite}[1]{\mbox{\origcite{#1}}}
   
@@ -54,6 +59,8 @@
      \rold{Removed text is turn into red.}
      Changes can also be inline: \rchange{This is an}{ inline change.}
      You can also find \rtag{tags} and \rcomment{other comments} in the text.
+     Changes can be also \rtchange{tagged}{to mark}{something}. 
+     Comments can be \rtcomment{tagged}{as well}.
   }
 }
 
@@ -69,6 +76,9 @@
   \renewcommand{\rchange}[2]{#2}
   \renewcommand{\rtag}[1]{}
   \renewcommand{\rcomment}[1]{}
+  
+  \renewcommand{\rtchange}[3]{#3}
+  \renewcommand{\rtcomment}[2]{}
   
   % cite needs to be redefined to avoid compilation errors
   \renewcommand{\cite}[1]{\origcite{#1}}
