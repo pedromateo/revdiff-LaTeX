@@ -16,6 +16,7 @@ tags and adding comments.
 * `\rtag{a tag}` to add tags to the text.
 * `\rtchange{tag}{This is an}{inline change}` is similar to `\rchange` but including a tag.
 * `\rtcomment{tag}{This is a comment}` is similar to `\rcomment` but including a tag.
+* `\rtenclose{tag}{This is a comment}{here the text}` is similar to `\renclose` but including a tag.
 
 Check the result of using these commands [here >>](https://github.com/pedromateo/latex_revdiff/blob/master/test.pdf)
 
