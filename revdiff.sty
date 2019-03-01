@@ -11,9 +11,9 @@
 \RequirePackage{tikz}
 \RequirePackage[normalem]{ulem}
 
-\definecolor{newcolor}{RGB}{0,0,153}
-\definecolor{oldcolor}{RGB}{255,102,102}
-\definecolor{tagcolor}{RGB}{255,128,0}
+\definecolor{newcolor}{RGB}{0,0,240}
+\definecolor{oldcolor}{RGB}{253,102,102}
+\definecolor{tagcolor}{RGB}{253,128,0}
 \definecolor{commentcolor}{RGB}{0,153,0}
 
 \newcommand{\rnew}[1]{#1}
@@ -68,6 +68,31 @@
      Changes can be also \rtchange{tagged}{to mark}{something}. 
      Comments can be \rtcomment{tagged}{as well}.
   }
+}
+
+
+%================================================%
+% Declare options - new mode
+%================================================%
+
+\DeclareOption{new}{
+
+  \renewcommand{\rnew}[1]{\textcolor{newcolor}{#1}}
+  \renewcommand{\rold}[1]{\textcolor{oldcolor}{[\ldots]}}
+  \renewcommand{\rchange}[2]{\rnew{#2}}
+  \renewcommand{\rtag}[1]{}
+  \renewcommand{\rcomment}[1]{}
+  \renewcommand{\renclose}[2]{#2}
+  
+  \renewcommand{\rtchange}[3]{\rchange{#2}{#3}}
+  \renewcommand{\rtcomment}[2]{\rcomment{#2}}
+  \renewcommand{\rtenclose}[3]{\renclose{#2}{#3}}
+  
+  % cite needs to be redefined to avoid compilation errors
+  %\renewcommand{\cite}[1]{\origcite{#1}}
+  
+  % this command prints a legend 
+  \renewcommand{\rlegend}{}
 }
 
 
