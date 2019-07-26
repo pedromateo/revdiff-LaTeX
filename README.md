@@ -7,6 +7,7 @@ tags and adding comments.
 
 ## Usage
 
+* `\usepackage[mode]{revdiff}` mode can be set to `revision` or `clean`. `revision` mode displays revision details. `clean` mode hides revision details.
 * `\rlegend` prints built-in legend text.
 * `\rnew{this is new text}` for text additions.
 * `\rold{this is old text}` for text deletions.
