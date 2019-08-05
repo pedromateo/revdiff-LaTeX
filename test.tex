@@ -5,6 +5,7 @@
 %%%
 %%% package for revision mode
 \usepackage[revision]{revdiff}
+%\usepackage[new]{revdiff}
 %\usepackage[clean]{revdiff}
 
 %%%
@@ -30,6 +31,16 @@ tags and adding comments.
 (This text was printed using {\tt \textbackslash rlegend} command.)
 
 %%%
+\section{Modes}
+
+There are currently three modes:
+\begin{description}
+	\item[revision] prints \textcolor{commentcolor}{comments}, \noindent \raisebox{-1.2ex}{\tikz{\node[text height=1.5ex,text depth=.5ex,scale=.9,fill=tagcolor!50,draw=tagcolor!100,thick,rounded corners] {\tt tags};}}, as well as \textcolor{oldcolor}{old} and \textcolor{newcolor}{new} text revisions in color coded format (as shown above).
+	\item[new] hides comments and tags, and displays old text as \textcolor{oldcolor}{[\ldots]} while printing \textcolor{newcolor}{new text in highlighted color}.
+	\item[clean] only shows the new text version without any revision markup.
+\end{description} 
+
+%%%
 \section{Usage example} 
 
 Lorem ipsum dolor sit amet, \rnew{this is new text} consectetur
@@ -43,6 +54,8 @@ in voluptate velit esse cillum dolore eu fugiat nulla
 pariatur. \rchange{This is an}{inline change} Excepteur sint occaecat
 cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
 id est laborum. \rtag{a tag}
+
+
 
 %%%
 \section{TODO list}
