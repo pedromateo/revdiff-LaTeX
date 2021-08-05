@@ -9,7 +9,11 @@
 \RequirePackage{letltxmacro}
 \RequirePackage{xcolor}
 \RequirePackage{tikz}
-\RequirePackage[normalem]{ulem}
+\usepackage{soul}
+\soulregister\cite7
+\soulregister\Hl{7}
+\soulregister\ref7
+\soulregister\pageref7
 
 \definecolor{newcolor}{RGB}{0,0,240}
 \definecolor{oldcolor}{RGB}{253,102,102}
@@ -37,22 +41,22 @@
 
 \DeclareOption{revision}{
   
-  \renewcommand{\rnew}[1]{\textcolor{newcolor}{#1}}
-  \renewcommand{\rold}[1]{\textcolor{oldcolor}{{\sout{#1}}}} 
+  \renewcommand{\rnew}[1]{{\color{newcolor}{#1}}}
+  \renewcommand{\rold}[1]{{\color{oldcolor}{{{\st{#1}}}}}}
   \renewcommand{\rchange}[2]{\rold{#1}\rnew{#2}}
   
   \renewcommand{\rtag}[1]{\noindent \raisebox{-1.2ex}{\tikz{\node[text height=1.5ex,text depth=.5ex,scale=.9,fill=tagcolor!50,draw=tagcolor!100,thick,rounded corners] {\tt #1};}}}
   
-  \renewcommand{\rcomment}[1]{\noindent \textcolor{commentcolor}{\sf //#1//}}
+  \renewcommand{\rcomment}[1]{\noindent{\color{commentcolor}{\sf //#1//}}}
   
-  \renewcommand{\renclose}[2]{~~\textcolor{commentcolor}{#1 $>>>>$} #2 \textcolor{commentcolor}{$<<<<$}~~}
+  \renewcommand{\renclose}[2]{~~{\color{commentcolor}{#1 $>>>>$}} #2 {\color{commentcolor}{$<<<<$}}~~}
   
   \renewcommand{\rtchange}[3]{\rtag{#1}~\rchange{#2}{#3}}
   \renewcommand{\rtcomment}[2]{\rtag{#1}~\rcomment{#2}}
   \renewcommand{\rtenclose}[3]{\rtag{#1}~\renclose{#2}{#3}}
   
   % cite needs to be redefined to avoid compilation errors
-  \renewcommand{\cite}[1]{\mbox{\origcite{#1}}}
+  \renewcommand{\cite}[1]{\protect{\origcite{#1}}}
   
   % this command prints a legend 
   \renewcommand{\rlegend}{
@@ -77,8 +81,8 @@
 
 \DeclareOption{new}{
 
-  \renewcommand{\rnew}[1]{\textcolor{newcolor}{#1}}
-  \renewcommand{\rold}[1]{\textcolor{oldcolor}{[\ldots]}}
+  \renewcommand{\rnew}[1]{{\color{newcolor}{#1}}}
+  \renewcommand{\rold}[1]{{\color{oldcolor}{[\ldots]}}}
   \renewcommand{\rchange}[2]{\rnew{#2}}
   \renewcommand{\rtag}[1]{}
   \renewcommand{\rcomment}[1]{}
@@ -89,7 +93,7 @@
   \renewcommand{\rtenclose}[3]{\renclose{#2}{#3}}
   
   % cite needs to be redefined to avoid compilation errors
-  %\renewcommand{\cite}[1]{\origcite{#1}}
+  \renewcommand{\cite}[1]{\origcite{#1}}
   
   % this command prints a legend 
   \renewcommand{\rlegend}{}
@@ -114,7 +118,7 @@
   \renewcommand{\rtenclose}[3]{#3}
   
   % cite needs to be redefined to avoid compilation errors
-  \renewcommand{\cite}[1]{\origcite{#1}}
+  % \renewcommand{\cite}[1]{\origcite{#1}}
   
   % this command prints a legend 
   \renewcommand{\rlegend}{}
